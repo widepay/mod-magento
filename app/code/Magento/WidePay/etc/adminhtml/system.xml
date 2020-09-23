@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="magento_widepay" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Wide Pay</label>
+
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Habilitado</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Título</label>
+                    <comment>Nome que será exibido na tela de pagamento</comment>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Status do pagamento pendente</label>
+                    <source_model>Magento\WidePay\Model\Config\Source\Order\Status\Pendingpayment</source_model>
+                </field>
+                <field id="information" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Descrição</label>
+                </field>
+                <field id="WIDE_PAY_WALLET_ID" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>ID da Carteira Wide Pay</label>
+                    <comment><![CDATA[Preencha este campo com o ID da carteira que deseja receber os pagamentos do sistema. O ID de sua carteira estará presente neste link: <a target="_blank" href="https://www.widepay.com/conta/configuracoes/carteiras">https://www.widepay.com/conta/configuracoes/carteiras</a>]]></comment>
+                </field>
+                <field id="WIDE_PAY_WALLET_TOKEN" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Token da Carteira Wide Pay</label>
+                    <comment><![CDATA[	Preencha com o token referente a sua carteira escolhida no campo acima. Clique no botão: "Integrações" na página do Wide Pay, será exibido o Token]]></comment>
+                </field>
+                <field id="WIDE_PAY_TAX_TYPE" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Tipo da Taxa de Variação</label>
+                    <comment><![CDATA[Modifique o valor final do recebimento. Configure aqui um desconto ou acrescimo na venda]]></comment>
+                    <source_model>Magento\WidePay\Model\Config\TaxType</source_model>
+                </field>
+                <field id="WIDE_PAY_TAX_VARIATION" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Taxa de Variação</label>
+                    <comment><![CDATA[O campo acima "Tipo de Taxa de Variação" será aplicado de acordo com este campo. Será adicionado um novo item na cobrança do Wide Pay. Esse item será possível verificar apenas na tela de pagamento do Wide Pay]]></comment>
+                </field>
+                <field id="WIDE_PAY_VALIDADE" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Acréscimo de Dias no Vencimento</label>
+                    <comment>Prazo de validade em dias para o Boleto. De 0 à 30</comment>
+                    <validate>validate-digits-range digits-range-0-30</validate>
+                </field>
+                <field id="WIDE_PAY_FINE" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Configuração de multa após o vencimento</label>
+                    <comment>Configuração de Multa</comment>
+                </field>
+                <field id="WIDE_PAY_INTEREST" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Configuração de juros após o vencimento</label>
+                    <comment>Configuração de Juros</comment>
+                </field>
+                <field id="WIDE_PAY_WAY" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Forma de Recebimento</label>
+                    <comment><![CDATA[Selecione uma opção]]></comment>
+                    <source_model>Magento\WidePay\Model\Config\PaymentWay</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data">
+        <observer name="save_magento_widepay_infos" instance="Magento\WidePay\Observer\DataAssignObserver"/>
+    </event>
+
+    <event name="sales_order_place_after">
+        <observer name="magento_widepay_sales_order_place_after" instance="Magento\WidePay\Observer\OrderObserver" />
+    </event>
+</config>
