@@ -10,8 +10,8 @@ Módulo desenvolvido para integração entre o sistema Magento e Wide Pay. Com o
 # Instalação Plugin
 
 1. Para segurança do seu e-commerce, faça um backup de todos os arquivos e banco de dados.
-2. Faça o download pelo link: https://github.com/widepay/mod-prestashop
-2. Após o download concluído, será preciso mesclas as pastas do módulo com a pasta app do Magento.
+2. Faça o download pelo link: https://github.com/widepay/mod-magento
+2. Após o download concluído, será preciso mesclar as pastas do módulo com a pasta app do Magento.
 3. Mescladas as pastas execute os comandos para habilitar e compilar o plugin.
  - php bin/magento module:enable Magento_WidePay
  - php bin/magento setup:upgrade
